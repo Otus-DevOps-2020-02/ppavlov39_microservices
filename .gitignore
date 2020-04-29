@@ -4,5 +4,6 @@
 *.tfvars
 .terraform/
 *.retry
+*.bak
 jdauphant.nginx
 vault.key
