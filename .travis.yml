@@ -1,0 +1,39 @@
+dist: trusty
+sudo: required
+language: bash
+
+env:
+  - tf_version=0.12.8
+
+before_install:
+  - curl https://raw.githubusercontent.com/express42/otus-homeworks/2020-02/run.sh | bash
+#  - wget -P /tmp/ https://releases.hashicorp.com/terraform/"$tf_version"/terraform_"$tf_version"_linux_amd64.zip
+#  - wget -P /tmp/ https://releases.hashicorp.com/packer/1.5.5/packer_1.5.5_linux_amd64.zip
+#  - wget -P /tmp/ https://github.com/terraform-linters/tflint/releases/download/v0.15.4/tflint_linux_amd64.zip  
+#  - sudo apt-get -y install unzip python3-pip
+#  - sudo pip install ansible-lint
+#  - unzip -o -d /tmp/  /tmp/terraform_"$tf_version"_linux_amd64.zip
+#  - unzip -o -d /tmp/ /tmp/packer_1.5.5_linux_amd64.zip
+#  - unzip -o -d /tmp/ /tmp/tflint_linux_amd64.zip
+#  - sudo mv /tmp/terraform /usr/local/bin/
+#  - sudo mv /tmp/packer /usr/local/bin/
+#  - sudo mv /tmp/tflint /usr/local/bin/
+#  - terraform init ./terraform/prod/ 
+#  - terraform init ./terraform/stage/ 
+#  - terraform validate ./terraform/prod/ && if [ $? -ne 0 ] ; then echo  "PROD +++ " ; fi
+#  - terraform validate ./terraform/stage/ && if [ $? -ne 0 ] ; then echo  "STAGE +++ " ; fi
+#  - packer validate -var-file ./packer/variables.json.example ./packer/app.json
+#  - packer validate -var-file ./packer/variables.json.example ./packer/db.json
+#  - ansible-lint ./ansible/playbooks/*.yml
+#  - tflint ./terraform/stage/
+#  - tflint ./terraform/prod/
+
+    #branches:
+    # only:
+    #    - master
+
+notifications:
+  slack:
+    rooms:
+      secure: "VTG+EdMGg6YoWzp6Mpr4xl/BRxuLh4Tj5iOe8dzIHTZwIN5CVzclbFvdY02+CLvPiKYIrzAvCaEKoHfC5JhYLHaARdCEuM4F0ZuGpRDXpLQXcexPxpbV/3WIo0y0Rm3UJbXThF2Bc0xJMCs9ChZGPhGnAoMxXkRih9xx08bp7DxSPbz9i2IAekykXa4t31Kd1gwdECWNj6E73oKVPRfcJ63E3+TVNyC8eaWjh6jEDTgjI/UnvXdLG9t2tp2L40x8Y5NlcmtuD74i8f+1haKdJx5QTYiHXGOmylHii9wkN4ClXoXcM9X/G+iXH0nRalfykcBKxiWXUGj3M7trTE0qLL1+fzKs2WN5S1+823z5qjC/hzNcN7vxRk5OekZgLHUrr9ZB7yYIQwA0m5XqmAI3/VsJj6clsDhK2jtwNLK6mYgSCHqKrEukXLz8pY/ZfwMCjdIyddlsiYe9wxRCgpxKLUq0R2nycBylUY0D10bQHsUlNII65e5xGFbV8yB74/8TtCNlvo8XtYu6bRes+SQJfreYEvGtjtCwfSWCG+LHCIO7ijz0K/HnZg19CXIe2GT5RxTYJIeQ+IoY5pMyFu33BdpFIB+4caf2NbWaa0v4moqtAQFmwsTy+eVLJ1FkMshXD4ZNnluK7hac/04U5++qWVpzQcn/kKnosjRu+dikjAI="
+
