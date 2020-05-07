@@ -1,7 +1,6 @@
 # ppavlov39_microservices
-ppavlov39 microservices repository.
 
-</h1>Docker-2</h1>
+<h1>Docker-2</h1>
 При использовании различных namespaces достигается изоляция контейнера в различных областях. Например,<br>
 <pre>docker run --rm -ti tehbilly/htop</pre>покажет тольк один процес - htop, а
 <pre>docker run --rm --pid host -ti tehbilly/htop</pre>покажет все процессы хостовой системы.
