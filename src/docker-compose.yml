@@ -1,0 +1,43 @@
+version: '3.3'
+
+services:
+  post_db:
+    image: mongo:${MONGO_VERSION}
+    volumes:
+      - post_db:/data/db
+    networks:
+      back_net:
+        aliases:
+          - post_db
+          - comment_db
+
+  ui:
+    build: ./ui
+    image: ${USERNAME}/ui:${REDDIT_UI_VERSION}
+    ports:
+      - ${REDDIT_HOST_PORT}:${REDDIT_CT_PORT}/tcp
+    networks:
+      - front_net
+
+  post:
+    build: ./post-py
+    image: ${USERNAME}/post:${REDDIT_POST_VERSION}
+    networks:
+      - front_net
+      - back_net
+
+  comment:
+    build: ./comment
+    image: ${USERNAME}/comment:${REDDIT_COMMENT_VERSION}
+    networks:
+      - front_net
+      - back_net
+
+volumes:
+  post_db:
+
+networks:
+  front_net:
+    driver: bridge
+  back_net:
+    driver: bridge
