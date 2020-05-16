@@ -7,8 +7,9 @@ RUN apt-get update -qq && \
     gem install bundler --no-ri --no-rdoc
 
 ENV APP_HOME /app
-COPY Gemfile* $APP_HOME/
+RUN mkdir $APP_HOME
 WORKDIR $APP_HOME
+COPY Gemfile* $APP_HOME/
 RUN bundle install
 COPY . $APP_HOME/
 
