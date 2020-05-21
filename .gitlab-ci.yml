@@ -9,6 +9,8 @@ stages:
 
 variables:
   DATABASE_URL: 'mongodb://mongo/user_posts'
+  DOCKER_TLS_CERTDIR: ""
+  DOCKER_HOST: tcp://docker:2375
 
 services:
   - docker:19.03.9-dind
