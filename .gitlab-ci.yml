@@ -1,4 +1,4 @@
-image: docker:19.03.9
+image: image: ruby:2.4.2
 
 stages:
   - build
@@ -12,25 +12,20 @@ variables:
   DOCKER_TLS_CERTDIR: ""
   DOCKER_HOST: tcp://docker:2375
 
-services:
-  - docker:19.03.9-dind
-
 before_script:
   - docker info
 
-build_image:
+build_job:
   stage: build
   script:
-    - cd docker-monolith
-    - docker build -t my-reddit-image .
+    - echo 'Building'
 
 test_unit_job:
   stage: test
-  #  services:
-  #  - mongo:latest
+  services:
+    - mongo:latest
   script:
-    - echo 'Testing 1'
-  #  - ruby simpletest.rb
+    - ruby simpletest.rb
 
 test_integration_job:
   stage: test
