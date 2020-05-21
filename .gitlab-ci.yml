@@ -13,7 +13,8 @@ variables:
   DOCKER_HOST: tcp://docker:2375
 
 before_script:
-  - docker info
+  - cd reddit
+  - bundle install
 
 build_job:
   stage: build
