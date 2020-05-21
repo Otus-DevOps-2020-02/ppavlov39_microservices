@@ -1,4 +1,4 @@
-image: ruby:2.4.2
+image: docker:19.03.9
 
 stages:
   - build
@@ -11,20 +11,21 @@ variables:
   DATABASE_URL: 'mongodb://mongo/user_posts'
 
 before_script:
-  - cd reddit
-  - bundle install
+  - docker info
 
-build_job:
+build_image:
   stage: build
   script:
-    - echo 'Building'
+    - cd docker-monolith
+    - docker build -t my-reddit-image .
 
 test_unit_job:
-  stage: test
-  services:
-    - mongo:latest
-  script:
-    - ruby simpletest.rb
+  stage: testi
+    - echo 'Testing 1'
+  #  services:
+  #  - mongo:latest
+  #script:
+  #  - ruby simpletest.rb
 
 test_integration_job:
   stage: test
@@ -33,6 +34,7 @@ test_integration_job:
 
 deploy_dev_job:
   stage: review
+  when: manual
   script:
     - echo "Deploy to $CI_ENVIRONMENT_SLUG"
   environment:
