@@ -20,7 +20,7 @@ build_image:
     - docker build -t my-reddit-image .
 
 test_unit_job:
-  stage: testi
+  stage: test
     - echo 'Testing 1'
   #  services:
   #  - mongo:latest
