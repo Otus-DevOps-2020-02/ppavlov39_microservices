@@ -10,6 +10,9 @@ stages:
 variables:
   DATABASE_URL: 'mongodb://mongo/user_posts'
 
+services:
+  - docker:19.03.9-dind
+
 before_script:
   - docker info
 
