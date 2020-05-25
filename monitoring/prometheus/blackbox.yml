@@ -1,0 +1,18 @@
+modules:
+  tcp_test:
+    prober: tcp
+    timeout: 5s
+    tcp:
+      preferred_ip_protocol: "ip4" # defaults to "ip6"
+      ip_protocol_fallback: false  # no fallback to "ip6"
+
+  http_2xx:
+    prober: http
+    timeout: 5s
+    http:
+      method: GET
+      no_follow_redirects: false
+      fail_if_ssl: false
+      fail_if_not_ssl: false
+      preferred_ip_protocol: "ip4" # defaults to "ip6"
+      ip_protocol_fallback: false  # no fallback to "ip6"
