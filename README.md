@@ -68,3 +68,13 @@ volumes:
   <li>Добавлен мониторинг tcp-сокетов приложений с помощью "Blackbox exporter";</li>
   <li>Написан Makefile для запуска сборки и пуша контейнеров.</li>
 </ul>
+
+<h1>Monitoring-2</h1>
+<b>В этой работе сделано:</b>
+<ul>
+  <li>Из файла docker-compose.yml в файл docker-compose-monitoring.yml вынесено все описение инфраструктуры мониторинга;</li>
+  <li>Для отслеживания метрик контейнеров добавлен сервис cAdvisor;</li>
+  <li>Для визуализации метрик настроена Grafana, берущая данные о метриках из Prometheus;</li>
+  <li>Добавлено несколько дашбордов: UI_Service_Monitoring и Business_Logic_Monitoring;</li>
+  <li>Добавлен и настроен Alertmanager, при недоступности любого из Endpoint-ов будет отправлено уведомление в Slack;</li>
+</ul>

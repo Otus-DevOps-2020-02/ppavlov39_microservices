@@ -8,3 +8,4 @@
 jdauphant.nginx
 vault.key
 *.env
+/monitoring/alertmanager/config.yml

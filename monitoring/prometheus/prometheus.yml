@@ -13,6 +13,11 @@ alerting:
           - "alertmanager:9093"
 
 scrape_configs:
+  - job_name: 'docker_experemental'
+    static_configs:
+      - targets:
+        - '172.50.0.1:9323'
+
   - job_name: 'prometheus'
     static_configs:
       - targets:
