@@ -90,7 +90,7 @@ volumes:
 </ul>
 <b>Задание со *</b><br>
 <ul>
-  <li>Настроен парсинг второго формата логов от сервиса UI;
+  <li>Настроен парсинг второго формата логов от сервиса UI:
 <pre><filter service.ui>
   @type parser
   format grok
