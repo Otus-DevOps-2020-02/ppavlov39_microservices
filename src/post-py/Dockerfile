@@ -1,7 +1,7 @@
 FROM python:3.6.0-alpine
 
 COPY . /app
-RUN apk add --no-cache build-base && \
+RUN apk add --no-cache build-base gcc musl-dev && \
     pip install -r /app/requirements.txt
 
 WORKDIR /app
