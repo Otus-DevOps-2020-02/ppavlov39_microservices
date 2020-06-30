@@ -1,0 +1,7 @@
+name: comment
+version: 1.0.0
+description: My reddit application comment service
+maintainers:
+  - name: maintainer
+    email: someemail@someserver.lan
+appVersion: 1.0

@@ -1,0 +1,7 @@
+name: ui
+version: 1.0.0
+description: My reddit application UI
+maintainers:
+  - name: maintainer
+    email: someemail@someserver.lan
+appVersion: 1.0

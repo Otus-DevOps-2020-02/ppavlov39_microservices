@@ -1,0 +1,20 @@
+comment:
+  image:
+    repository: ppavlov39/comment
+    tag: latest
+  service:
+    externalPort: 9292
+
+post:
+  image:
+    repository: ppavlov39/post
+    tag: latest
+  service:
+    externalPort: 5000
+
+ui:
+  image:
+    repository: ppavlov39/ui
+    tag: latest
+  service:
+    externalPort: 9292
