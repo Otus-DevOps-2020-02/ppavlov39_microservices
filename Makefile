@@ -29,7 +29,7 @@ help:
 build_ui:
 	bash -c 'export USER_NAME=ppavlov39 && cd ./src/ui && bash ./docker_build.sh'
 build_post:
-	bash -c 'export USER_NAME=ppavlov39 && cd ./src/post-py && bash ./docker_build.sh'
+	bash -c 'export USER_NAME=ppavlov39 && cd ./src/post && bash ./docker_build.sh'
 build_comment:
 	bash -c 'export USER_NAME=ppavlov39 && cd ./src/comment && bash ./docker_build.sh'
 build_prometheus:
@@ -44,11 +44,11 @@ build_fluentd:
 	bash -c "cd ./logging/fluentd/ && docker build -t $$USER_NAME/fluentd ."
 
 push_ui:
-	docker push $$USER_NAME/ui
+	docker push $$USER_NAME/reddit-ui
 push_post:
-	docker push $$USER_NAME/post
+	docker push $$USER_NAME/reddit-post
 push_comment:
-	docker push $$USER_NAME/comment
+	docker push $$USER_NAME/reddit-comment
 push_mongo_exporter:
 	docker push $$USER_NAME/mongodb-exporter
 push_bb_exporter:
